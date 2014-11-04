@@ -1,0 +1,1843 @@
+
+
+<!-- application/layouts/scripts/layout.phtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Sopa, vegetais com consome de carne, lata, condensada, varejo | Tabela de Composição Química dos Alimentos</title>
+  		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="author" content="Meide Silva Anção" />
+<meta name="description" content="Tabela de composição química dos alimentos, United States Department of Agriculture (USDA) Nutrient Database for Standard Reference - SR25 2012" />
+<meta http-equiv="keywords" content="meide anção, tabela de composição química dos alimentos, nutrientes, USDA" />  		<link href="/dis/servicos/nutri/public/css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/dis/servicos/nutri/public/css/blue/style.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/dis/servicos/nutri/public/css/smoothness/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/dis/servicos/nutri/public/css/jquery-ui-1.10.4.custom.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/dis/servicos/nutri/public/css/layout.css" media="screen" rel="stylesheet" type="text/css" />  		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="/dis/servicos/nutri/public/js/jquery/jquery-ui-1.10.4.custom.js"></script>
+<script type="text/javascript" src="/dis/servicos/nutri/public/js/jquery/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="/dis/servicos/nutri/public/js/jquery/jquery.tablesorter.pager.js"></script>  		  		
+  		<script   type="text/javascript">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ 			 ga('create', 'UA-6213388-3', 'unifesp.br/dis/servicos/nutri/public');
+  			ga('send', 'pageview')
+
+			
+  		
+  		
+	  	 	jQuery.tablesorter.addParser({
+		        // set a unique id 
+		        id: 'links',
+		        is: function(s)
+		        {
+		            // return false so this parser is not auto detected 
+		            return false;
+		        },
+		        format: function(s)
+		        {
+		            // format your data for normalization 
+		            return s.replace(new RegExp(/<.*?>/),"");
+		        },
+		        // set type, either numeric or text
+		        type: 'text'
+		    });  
+	  		
+	  		 jQuery(document).ready(
+			  		
+			  		function() { 
+			  			
+							
+
+							$("#tableAlimentos").tablesorter({ 
+								headers: {
+					                1: {
+					                    sorter: 'links'
+					                }
+					            },
+							 	sortList: [[0,0]]	  
+						 })
+							.tablesorterPager({
+													
+													container: $("#pager")
+							});
+							
+							$("#tableNutrientes").tablesorter({ 
+					        // sort on the first column and third column, order asc 
+					        headers: {
+					                1: {
+					                    sorter: 'links'
+					                }
+					            },
+							sortList: [[4,1]]	
+			            	
+					    })
+						.tablesorterPager({
+													
+													container: $("#pagerNutriente1")
+							});
+	
+							$("#tableNutrientes100").tablesorter({ 
+					        // sort on the first column and third column, order asc 
+					        headers: {
+					                1: {
+					                    sorter: 'links'
+					                }
+					            }, 
+	
+							    sortList: [[2,1]]	
+					    })
+						 .tablesorterPager({
+													
+													container: $("#pagerNutriente100")
+							});
+
+						
+						 	  $("#ac").autocomplete({
+								
+			       			 	source: "/dis/servicos/nutri/public/autocomplete.php",
+			       			 
+			       			
+			        			minLength: 2
+
+
+			        			
+							});	 
+
+							
+							 						  				
+			  		}); 
+
+	  		
+	  		
+	  		
+				
+  		</script>
+	</head>
+	<body >
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+  			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+  			js = d.createElement(s); js.id = id;
+  			js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.0";
+  			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+		<div id="tudo">
+		
+
+			<a href="http://www.epm.br/" target="_blank"><div id="imagemBrasao"></div></a>	
+					
+					<div id="imagem">
+						<h1>Departamento de Informática em Saúde</h1>	
+						<h2>Escola Paulista de Medicina</h2>	
+						<h3>Universidade Federal de São Paulo</h3>	
+							
+					</div>	
+					
+			
+			
+			
+				
+						
+				
+			
+			
+			<!-- <div id="rodape">
+											
+				<b>Contato:</b> <b class="rodape_cor">meide@dis.epm.br</b>
+								
+			</div> 	
+				 -->
+				
+ 	 	</div> 
+ 	 	
+<div class="topnav">
+				<ul class="navigation">
+    <li>
+        <a href="/dis/servicos/nutri/public/">Home</a>
+    </li>
+    <li>
+        <a href="/dis/servicos/nutri/public/Alimento">Alimentos</a>
+    </li>
+    <li>
+        <a href="/dis/servicos/nutri/public/Nutriente">Componentes</a>
+    </li>
+    <li>
+        <a href="/dis/servicos/nutri/public/Documentation">SR25 Documentation</a>
+    </li>
+    <li>
+        <a href="/dis/servicos/nutri/public/Manual">Manual do Usuário</a>
+    </li>
+    <li>
+        <a href="/dis/servicos/nutri/public/Credito">Sobre</a>
+    </li>
+</ul></div>
+<div id="nav" >
+	
+		
+</div>
+
+<div id="relatorioNutrienteAlimento">	
+			
+		<a id="buttonVoltar" href="/dis/servicos/nutri/public/alimento" >Voltar</a>
+			    			<h2 class="relatorioTitulo">Relatório completo: Sopa, vegetais com consome de carne, lata, condensada, varejo</h2>
+	    	 	<a  class="relatorio" href="/dis/servicos/nutri/public/alimento/nutriente/relatorio/1/id/06072/seqQuant/3">
+	 				    												    																	Relatório Básico
+	    																    </a>
+    	
+   
+	    <div class="fb-like" data-href="http://www.unifesp.br/dis/servicos/nutri/public/alimento/nutriente/id/06072" 
+    	data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+	 
+    
+    	
+    	
+ 		
+ 	
+	<form   method="post" action="/dis/servicos/nutri/public/alimento/nutriente/id/06072/seqQuant/3">
+		<table class="nutriente"  >
+			<tr >
+				<th class="nutriente1">Componente</th>
+				
+				<th class="nutriente1">Unidade</th>
+							
+					<th class="nutriente" width="100px" >
+					 	<input type="submit" value="atualizar">
+						<input type="text" name="fname0" size="5" maxlength="5" value="1"><br />
+						 (100.00 g)																
+									
+					</th>
+			    
+							
+					<th class="nutriente" width="100px" >
+					 	<input type="submit" value="atualizar">
+						<input type="text" name="fname1" size="5" maxlength="5" value="1"><br />
+						xícara de chá (98.40 g)																
+									
+					</th>
+			    
+							
+					<th class="nutriente" width="100px" >
+					 	<input type="submit" value="atualizar">
+						<input type="text" name="fname2" size="5" maxlength="5" value="1"><br />
+						lata (298.00 g)																
+									
+					</th>
+			    
+									 	
+			</tr>
+	 					<tr >
+				<td class="nutriente"  colspan="7" >Principais</td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Água</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >83.27</td>
+								<td class="nutrienteValor" colspan="1" >81.94</td>
+								<td class="nutrienteValor" colspan="1" >248.14</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Valor energético (kcal)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >kcal</td>
+								<td class="nutrienteValor" colspan="1" >66</td>
+								<td class="nutrienteValor" colspan="1" >65</td>
+								<td class="nutrienteValor" colspan="1" >197</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Valor energético (kJ)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >kJ</td>
+								<td class="nutrienteValor" colspan="1" >276</td>
+								<td class="nutrienteValor" colspan="1" >272</td>
+								<td class="nutrienteValor" colspan="1" >822</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Proteína</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >2.42</td>
+								<td class="nutrienteValor" colspan="1" >2.38</td>
+								<td class="nutrienteValor" colspan="1" >7.21</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Gorduras totais</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >1.56</td>
+								<td class="nutrienteValor" colspan="1" >1.54</td>
+								<td class="nutrienteValor" colspan="1" >4.65</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Cinzas</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >2.06</td>
+								<td class="nutrienteValor" colspan="1" >2.03</td>
+								<td class="nutrienteValor" colspan="1" >6.14</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Carboidratos (por diferença)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >10.7</td>
+								<td class="nutrienteValor" colspan="1" >10.53</td>
+								<td class="nutrienteValor" colspan="1" >31.89</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Fibra alimentar</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >1.3</td>
+								<td class="nutrienteValor" colspan="1" >1.3</td>
+								<td class="nutrienteValor" colspan="1" >3.9</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Monossacarídeos</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >1.64</td>
+								<td class="nutrienteValor" colspan="1" >1.61</td>
+								<td class="nutrienteValor" colspan="1" >4.89</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" >Minerais</td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Cálcio</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >14</td>
+								<td class="nutrienteValor" colspan="1" >14</td>
+								<td class="nutrienteValor" colspan="1" >42</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ferro</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0.79</td>
+								<td class="nutrienteValor" colspan="1" >0.78</td>
+								<td class="nutrienteValor" colspan="1" >2.35</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Magnésio</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >5</td>
+								<td class="nutrienteValor" colspan="1" >5</td>
+								<td class="nutrienteValor" colspan="1" >15</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Fósforo</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >32</td>
+								<td class="nutrienteValor" colspan="1" >31</td>
+								<td class="nutrienteValor" colspan="1" >95</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Potássio</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >157</td>
+								<td class="nutrienteValor" colspan="1" >154</td>
+								<td class="nutrienteValor" colspan="1" >468</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Sódio</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >515</td>
+								<td class="nutrienteValor" colspan="1" >507</td>
+								<td class="nutrienteValor" colspan="1" >1535</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Zinco</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0.65</td>
+								<td class="nutrienteValor" colspan="1" >0.64</td>
+								<td class="nutrienteValor" colspan="1" >1.94</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Cobre</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0.125</td>
+								<td class="nutrienteValor" colspan="1" >0.123</td>
+								<td class="nutrienteValor" colspan="1" >0.373</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Manganês</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0.275</td>
+								<td class="nutrienteValor" colspan="1" >0.271</td>
+								<td class="nutrienteValor" colspan="1" >0.82</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Selênio</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >2.2</td>
+								<td class="nutrienteValor" colspan="1" >2.2</td>
+								<td class="nutrienteValor" colspan="1" >6.6</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" >Vitaminas</td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina C, ácido ascórbico total</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >1.9</td>
+								<td class="nutrienteValor" colspan="1" >1.9</td>
+								<td class="nutrienteValor" colspan="1" >5.7</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Tiamina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0.042</td>
+								<td class="nutrienteValor" colspan="1" >0.041</td>
+								<td class="nutrienteValor" colspan="1" >0.125</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Riboflavina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0.037</td>
+								<td class="nutrienteValor" colspan="1" >0.036</td>
+								<td class="nutrienteValor" colspan="1" >0.11</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Niacina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0.789</td>
+								<td class="nutrienteValor" colspan="1" >0.776</td>
+								<td class="nutrienteValor" colspan="1" >2.351</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido Pantotênico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0.28</td>
+								<td class="nutrienteValor" colspan="1" >0.276</td>
+								<td class="nutrienteValor" colspan="1" >0.834</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina B6</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0.046</td>
+								<td class="nutrienteValor" colspan="1" >0.045</td>
+								<td class="nutrienteValor" colspan="1" >0.137</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido fólico, total</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >9</td>
+								<td class="nutrienteValor" colspan="1" >9</td>
+								<td class="nutrienteValor" colspan="1" >27</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido fólico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Folato, alimento</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >9</td>
+								<td class="nutrienteValor" colspan="1" >9</td>
+								<td class="nutrienteValor" colspan="1" >27</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Folato, equivalente à medida diária</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >9</td>
+								<td class="nutrienteValor" colspan="1" >9</td>
+								<td class="nutrienteValor" colspan="1" >27</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Colina, total</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >10.3</td>
+								<td class="nutrienteValor" colspan="1" >10.1</td>
+								<td class="nutrienteValor" colspan="1" >30.7</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina B12</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina B-12, adicionada</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina A (atividade equivalente de retinol)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >85</td>
+								<td class="nutrienteValor" colspan="1" >84</td>
+								<td class="nutrienteValor" colspan="1" >253</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Retinol</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Betacaroteno</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >831</td>
+								<td class="nutrienteValor" colspan="1" >818</td>
+								<td class="nutrienteValor" colspan="1" >2476</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Alfacaroteno</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >387</td>
+								<td class="nutrienteValor" colspan="1" >381</td>
+								<td class="nutrienteValor" colspan="1" >1153</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Beta-criptoxantina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina A (SI)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >IU</td>
+								<td class="nutrienteValor" colspan="1" >1707</td>
+								<td class="nutrienteValor" colspan="1" >1680</td>
+								<td class="nutrienteValor" colspan="1" >5087</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Licopeno</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >29</td>
+								<td class="nutrienteValor" colspan="1" >29</td>
+								<td class="nutrienteValor" colspan="1" >86</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Luteína + zeaxantina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >35</td>
+								<td class="nutrienteValor" colspan="1" >34</td>
+								<td class="nutrienteValor" colspan="1" >104</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina E (alfatocoferol)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0.12</td>
+								<td class="nutrienteValor" colspan="1" >0.12</td>
+								<td class="nutrienteValor" colspan="1" >0.36</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina E, adicionada </td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina D (D2 + D3)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina D</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >IU</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Vitamina K (filoquinona)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >µg</td>
+								<td class="nutrienteValor" colspan="1" >2.3</td>
+								<td class="nutrienteValor" colspan="1" >2.3</td>
+								<td class="nutrienteValor" colspan="1" >6.9</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" >Lipídios</td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Gorduras saturadas</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.36</td>
+								<td class="nutrienteValor" colspan="1" >0.354</td>
+								<td class="nutrienteValor" colspan="1" >1.073</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo butírico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo capróico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo caprílico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo cáprico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo láurico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo mirístico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.01</td>
+								<td class="nutrienteValor" colspan="1" >0.01</td>
+								<td class="nutrienteValor" colspan="1" >0.03</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo palmítico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.21</td>
+								<td class="nutrienteValor" colspan="1" >0.207</td>
+								<td class="nutrienteValor" colspan="1" >0.626</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo esteárico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.11</td>
+								<td class="nutrienteValor" colspan="1" >0.108</td>
+								<td class="nutrienteValor" colspan="1" >0.328</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Gorduras monoinsaturadas</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.45</td>
+								<td class="nutrienteValor" colspan="1" >0.443</td>
+								<td class="nutrienteValor" colspan="1" >1.341</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo palmítico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.02</td>
+								<td class="nutrienteValor" colspan="1" >0.02</td>
+								<td class="nutrienteValor" colspan="1" >0.06</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo oléico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.42</td>
+								<td class="nutrienteValor" colspan="1" >0.413</td>
+								<td class="nutrienteValor" colspan="1" >1.252</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo gadoléico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo erúcico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Gorduras poliinsaturadas</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.64</td>
+								<td class="nutrienteValor" colspan="1" >0.63</td>
+								<td class="nutrienteValor" colspan="1" >1.907</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo linoléico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.55</td>
+								<td class="nutrienteValor" colspan="1" >0.541</td>
+								<td class="nutrienteValor" colspan="1" >1.639</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo linolênico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.09</td>
+								<td class="nutrienteValor" colspan="1" >0.089</td>
+								<td class="nutrienteValor" colspan="1" >0.268</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo parinárico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido graxo aracdônico</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido eicosapentaenoico (EPA)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido docosapentaenóico (DPA)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Ácido decosahexaenóico (DHA)</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Colesterol</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >1</td>
+								<td class="nutrienteValor" colspan="1" >1</td>
+								<td class="nutrienteValor" colspan="1" >3</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" >Aminoácidos</td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Triptofano</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.017</td>
+								<td class="nutrienteValor" colspan="1" >0.017</td>
+								<td class="nutrienteValor" colspan="1" >0.051</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Treonina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.059</td>
+								<td class="nutrienteValor" colspan="1" >0.058</td>
+								<td class="nutrienteValor" colspan="1" >0.176</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Isoleucina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.074</td>
+								<td class="nutrienteValor" colspan="1" >0.073</td>
+								<td class="nutrienteValor" colspan="1" >0.221</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Leucina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.134</td>
+								<td class="nutrienteValor" colspan="1" >0.132</td>
+								<td class="nutrienteValor" colspan="1" >0.399</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Lisina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.103</td>
+								<td class="nutrienteValor" colspan="1" >0.101</td>
+								<td class="nutrienteValor" colspan="1" >0.307</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Metionina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.025</td>
+								<td class="nutrienteValor" colspan="1" >0.025</td>
+								<td class="nutrienteValor" colspan="1" >0.075</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Cisteína</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.019</td>
+								<td class="nutrienteValor" colspan="1" >0.019</td>
+								<td class="nutrienteValor" colspan="1" >0.057</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Fenilalanina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.087</td>
+								<td class="nutrienteValor" colspan="1" >0.086</td>
+								<td class="nutrienteValor" colspan="1" >0.259</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Tirosina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.048</td>
+								<td class="nutrienteValor" colspan="1" >0.047</td>
+								<td class="nutrienteValor" colspan="1" >0.143</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Valina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.102</td>
+								<td class="nutrienteValor" colspan="1" >0.1</td>
+								<td class="nutrienteValor" colspan="1" >0.304</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Arginina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.112</td>
+								<td class="nutrienteValor" colspan="1" >0.11</td>
+								<td class="nutrienteValor" colspan="1" >0.334</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Histidina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.041</td>
+								<td class="nutrienteValor" colspan="1" >0.04</td>
+								<td class="nutrienteValor" colspan="1" >0.122</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Alanina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.14</td>
+								<td class="nutrienteValor" colspan="1" >0.138</td>
+								<td class="nutrienteValor" colspan="1" >0.417</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Aspartato</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.207</td>
+								<td class="nutrienteValor" colspan="1" >0.204</td>
+								<td class="nutrienteValor" colspan="1" >0.617</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Glutamato</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.692</td>
+								<td class="nutrienteValor" colspan="1" >0.681</td>
+								<td class="nutrienteValor" colspan="1" >2.062</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Glicina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.223</td>
+								<td class="nutrienteValor" colspan="1" >0.219</td>
+								<td class="nutrienteValor" colspan="1" >0.665</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Prolina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.184</td>
+								<td class="nutrienteValor" colspan="1" >0.181</td>
+								<td class="nutrienteValor" colspan="1" >0.548</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Serina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0.082</td>
+								<td class="nutrienteValor" colspan="1" >0.081</td>
+								<td class="nutrienteValor" colspan="1" >0.244</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" >Outros</td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Álcool</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >g</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Cafeína</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+						<tr >
+				<td class="nutriente"  colspan="7" ></td>
+				
+			</tr>	
+			<tr>
+			
+				<td class="nutrienteDesc" colspan="1" >Teobromina</td>
+				
+				<td class="nutrienteUnidade" colspan="1" >mg</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" >0</td>
+								<td class="nutrienteValor" colspan="1" ></td>
+							
+			
+		
+			</tr>
+		
+					</table>
+	
+	
+	</form>
+		
+	
+</div>
+	</body>
+</html>
