@@ -54,8 +54,11 @@
       <Cl au="0" df="" nm="descricao" nu="0">
         <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
-      <Cl au="0" df="" nm="tipo_componente" nu="0">
+      <Cl au="0" df="" nm="tipo_componente" nu="1">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="unidade" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Fk deAc="1" nm="fk_componentes_tipos_componente" prLkCl="id" upAc="0">
         <PrTb mn="0" nm="tipos_componente" oe="1" sch="public" zr="0"/>
