@@ -48,10 +48,9 @@ public class ExtratorUtil {
 		for (Element node : nodes) {
 			if (node.getElementsByTag("td").size() > 0 && node.getElementsByTag("td").get(0).hasClass("nutrienteDesc")){					
 				String descricao = node.getElementsByClass("nutrienteDesc").get(0).text();
-				String unidade = node.getElementsByClass("nutrienteUnidade").get(0).text();
 				String valor = node.getElementsByClass("nutrienteValor").get(0).text();
 				
-				if (descricao != null && unidade != null && valor != null){
+				if (descricao != null && valor != null){
 					for (Componente componente : componentes) {
 						if (componente.getDescricao().equals(descricao)){
 							itens.put(componente, Double.valueOf(valor));
