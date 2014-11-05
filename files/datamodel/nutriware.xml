@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db flnm="nutriware" nm="nutriware" ver="1.3.4">
+  <VerLbl/>
+  <VerNotes/>
+  <DefTblOpts/>
+  <DocFolder>/sibe/workspace_dbwrench/NutriExtractor/files/datamodel</DocFolder>
+  <Sch Cm="" nm="public">
+    <Tbl UsSo="1" nm="alimentos">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkalimentos"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descricao" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="alimentos_medidas">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkalimentos_medidas"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="alimento" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="medida" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="valor" nu="0">
+        <DT arr="0" ds="Number" en="" id="780" ln="5" sc="4" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="1" nm="fk_alimentos_medidas_alimentos" prLkCl="id" upAc="0">
+        <PrTb mn="0" nm="alimentos" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="alimentos_medidas" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="alimento" prCl="id"/>
+      </Fk>
+      <Fk deAc="1" nm="fk_alimentos_medidas_medidas" prLkCl="id" upAc="0">
+        <PrTb mn="0" nm="medidas" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="alimentos_medidas" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="medida" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="componentes">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkcomponentes"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descricao" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tipo_componente" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="1" nm="fk_componentes_tipos_componente" prLkCl="id" upAc="0">
+        <PrTb mn="0" nm="tipos_componente" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="componentes" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="tipo_componente" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="componentes_alimentos">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkcomponentes_alimentos"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="alimento" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="componente" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="valor" nu="0">
+        <DT arr="0" ds="Number" en="" id="780" ln="5" sc="4" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_componentes_alimentos_alimentos" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="alimentos" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="componentes_alimentos" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="alimento" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_componentes_alimentos_componentes" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="componentes" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="componentes_alimentos" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="componente" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="medidas">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pkmedidas"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descricao" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tipos_componente">
+      <TblOpts/>
+      <Pk ClNs="id" nm="pktipos_componente"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descricao" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <CustomTypes/>
+  </Sch>
+  <Dgm nm="nutriware">
+    <RnCf ClkAct="true" FtSz="9" lkStgy="KeyToKeyStrategy" zm="1.0">
+      <VbCfg>
+        <Fg ky="Auto Number" vl="0"/>
+        <Fg ky="Check" vl="0"/>
+        <Fg ky="Comment" vl="0"/>
+        <Fg ky="Data Type" vl="1"/>
+        <Fg ky="Default" vl="0"/>
+        <Fg ky="ENUM Values" vl="0"/>
+        <Fg ky="Length" vl="1"/>
+        <Fg ky="Name" vl="1"/>
+        <Fg ky="Nullable" vl="0"/>
+        <Fg ky="Schema Name" vl="0"/>
+        <Fg ky="Signed" vl="0"/>
+      </VbCfg>
+    </RnCf>
+    <DiaProps>
+      <Show AllCols="1" FkCols="1" FkNms="1" PkCols="1"/>
+      <ErNotation>DbwErNotation</ErNotation>
+      <DbTableRectangleFill>HeaderFooterFill</DbTableRectangleFill>
+      <svg path=""/>
+    </DiaProps>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="alimentos" x="290" y="154"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="medidas" x="483" y="38"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="componentes" x="274" y="303"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="tipos_componente" x="284" y="381"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="alimentos_medidas" x="270" y="75"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="componentes_alimentos" x="304" y="220"/>
+    <FkGl bkCl="ff000000" childEdge="" nm="public.alimentos_medidas.fk_alimentos_medidas_alimentos" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="public.alimentos_medidas.fk_alimentos_medidas_medidas" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="public.componentes.fk_componentes_tipos_componente" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="public.componentes_alimentos.fk_componentes_alimentos_alimentos" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="public.componentes_alimentos.fk_componentes_alimentos_componentes" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <Notes/>
+    <Zones/>
+  </Dgm>
+  <RnmMgr NxRnmId="13">
+    <RnmCh ObjCls="Schema" ParCls="Database" ParNme="nutriware" SupCls="" SupNme="">
+      <Rnm id="1" nNm="public" oNm="schemaA"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="alimentos" SupCls="Schema" SupNme="public">
+      <Rnm id="2" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="medidas" SupCls="Schema" SupNme="public">
+      <Rnm id="3" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="componentes" SupCls="Schema" SupNme="public">
+      <Rnm id="4" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="tipos_componente" SupCls="Schema" SupNme="public">
+      <Rnm id="5" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="alimentos_medidas" SupCls="Schema" SupNme="public">
+      <Rnm id="6" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="componentes_alimentos" SupCls="Schema" SupNme="public">
+      <Rnm id="7" nNm="id" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="alimentos_medidas" SupCls="Schema" SupNme="public">
+      <Rnm id="8" nNm="alimento" oNm="alimentos_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="alimentos_medidas" SupCls="Schema" SupNme="public">
+      <Rnm id="9" nNm="medida" oNm="medidas_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="componentes_alimentos" SupCls="Schema" SupNme="public">
+      <Rnm id="10" nNm="alimento" oNm="alimentos_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="componentes_alimentos" SupCls="Schema" SupNme="public">
+      <Rnm id="11" nNm="componente" oNm="componentes_id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="componentes" SupCls="Schema" SupNme="public">
+      <Rnm id="12" nNm="tipo_componente" oNm="tipos_componente_id"/>
+    </RnmCh>
+  </RnmMgr>
+  <DbDocOptionMgr>
+    <BasicOptionMgr>
+      <Name>db.doc.option.mgr</Name>
+      <BoolOpt lbl="Diagrams" nm="doc.diagrams" on="1" spl="0"/>
+      <BoolOpt lbl="Foreign Keys" nm="doc.fks" on="1" spl="0"/>
+      <BoolOpt lbl="Indexes" nm="doc.indexes" on="1" spl="0"/>
+      <BoolOpt lbl="Overwrite CSS File" nm="doc.overwrite.css" on="1" spl="0"/>
+      <BoolOpt lbl="Procedures" nm="doc.procs" on="1" spl="0"/>
+      <BoolOpt lbl="Schemas" nm="doc.schemas" on="1" spl="0"/>
+      <BoolOpt lbl="Sequences" nm="doc.sequences" on="1" spl="0"/>
+      <BoolOpt lbl="Tables" nm="doc.tables" on="1" spl="0"/>
+      <BoolOpt lbl="Triggers" nm="doc.triggers" on="1" spl="0"/>
+      <BoolOpt lbl="Views" nm="doc.views" on="1" spl="0"/>
+    </BasicOptionMgr>
+  </DbDocOptionMgr>
+  <OpenEditors>
+    <OpenEditor ClsNm="Diagram" fqn="null.nutriware" selected="1"/>
+  </OpenEditors>
+  <TreePaths>
+    <TreePath/>
+    <TreePath>/Schemas (1)</TreePath>
+    <TreePath>/Diagrams (1)</TreePath>
+  </TreePaths>
+</Db>
