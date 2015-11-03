@@ -16,7 +16,7 @@ public class ExtratorDeMedidasComValores {
 	public static void main(String[] args) throws IOException {
 		
 		String[] alimentos = {"01001"};	
-		String defaultPath = "/sibe/workspace_dbwrench/NutriExtractor/files/alimentos/";
+		String defaultPath = "/home/kleyson/Dev/Projects/java/workspace/NutriExtractor/files/alimentos/";
 		Map<String,String> itens = new HashMap<String,String>();
 		
 		for (String alimento : alimentos) {

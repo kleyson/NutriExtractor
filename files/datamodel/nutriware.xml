@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Db flnm="nutriware" nm="nutriware" ver="1.3.4">
+<?xml version="1.0" encoding="UTF-8"?><Db flnm="nutriware" nm="nutriware" ver="1.3.4">
   <VerLbl/>
   <VerNotes/>
   <DefTblOpts/>
@@ -9,7 +8,7 @@
       <TblOpts/>
       <Pk ClNs="id" nm="pkalimentos"/>
       <Cl au="1" df="" nm="id" nu="0">
-        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="descricao" nu="0">
         <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
@@ -24,13 +23,13 @@
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="alimento" nu="0">
-        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="medida" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="valor" nu="0">
-        <DT arr="0" ds="Number" en="" id="780" ln="5" sc="4" sg="1" un="0"/>
+        <DT arr="0" ds="Decimal" en="" id="3" ln="5" sc="4" sg="1" un="0"/>
       </Cl>
       <Fk deAc="1" nm="fk_alimentos_medidas_alimentos" prLkCl="id" upAc="0">
         <PrTb mn="0" nm="alimentos" oe="1" sch="public" zr="0"/>
@@ -61,7 +60,7 @@
         <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Fk deAc="1" nm="fk_componentes_tipos_componente" prLkCl="id" upAc="0">
-        <PrTb mn="0" nm="tipos_componente" oe="1" sch="public" zr="0"/>
+        <PrTb mn="0" nm="tipos_componente" oe="1" sch="public" zr="1"/>
         <CdTb mn="1" nm="componentes" oe="0" sch="public" zr="1"/>
         <ClPr cdCl="tipo_componente" prCl="id"/>
       </Fk>
@@ -103,7 +102,7 @@
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <Cl au="0" df="" nm="descricao" nu="0">
-        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
       </Cl>
       <UniqueConstraints/>
       <SchTrHis/>
@@ -145,7 +144,7 @@
       <svg path=""/>
     </DiaProps>
     <TbGl bkCl="ff6666ff" sch="public" tbl="alimentos" x="290" y="154"/>
-    <TbGl bkCl="ff6666ff" sch="public" tbl="medidas" x="483" y="38"/>
+    <TbGl bkCl="ff6666ff" sch="public" tbl="medidas" x="637" y="44"/>
     <TbGl bkCl="ff6666ff" sch="public" tbl="componentes" x="274" y="303"/>
     <TbGl bkCl="ff6666ff" sch="public" tbl="tipos_componente" x="284" y="381"/>
     <TbGl bkCl="ff6666ff" sch="public" tbl="alimentos_medidas" x="270" y="75"/>
@@ -222,11 +221,12 @@
     </BasicOptionMgr>
   </DbDocOptionMgr>
   <OpenEditors>
-    <OpenEditor ClsNm="Diagram" fqn="null.nutriware" selected="1"/>
+    <OpenEditor ClsNm="Diagram" fqn="null.nutriware" selected="0"/>
   </OpenEditors>
   <TreePaths>
     <TreePath/>
     <TreePath>/Schemas (1)</TreePath>
+    <TreePath>/Schemas (1)/public</TreePath>
     <TreePath>/Diagrams (1)</TreePath>
   </TreePaths>
 </Db>
